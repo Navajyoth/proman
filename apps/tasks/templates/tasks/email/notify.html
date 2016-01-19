@@ -1,0 +1,29 @@
+<div>
+    <div>{{msg}}<div>
+    <hr>
+    <table border="1" cellpadding="5" cellspacing="0" style="text-align:left">
+        <tr>
+            <th>Project</th>
+            <td>{{task.project.name}}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{task.title}}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td style="min-width:80%;">
+                {% autoescape off %}{{task.description}}{% endautoescape %}
+                <ol style="margin:0; padding:0;">
+                    {% for i in task.items %}
+                    <li>{{i.name}}</li>
+                    {% endfor %}
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <th>Assigned by</th>
+            <td>{{created_by.name}}</td>
+        </tr>
+    </table>
+</div>

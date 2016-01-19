@@ -1,0 +1,9 @@
+<div class="effort">
+    <div class="input-group" ng-if="!workitem.child_count">
+        <a  class="input-group-addon delta" ng-click="updateEffort(workitem, -1)">-</a>
+        <input type="text" class="form-control" ng-model="workitem.effort" ng-blur="updateEffort(workitem, 0)">
+        <a  class="input-group-addon delta" ng-click="updateEffort(workitem, 1)">+</a>
+    </div>
+    <div class="badge total" ng-if="workitem.child_count">{{workitem.total_effort}}</div>
+</div>
+

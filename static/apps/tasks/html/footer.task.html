@@ -1,0 +1,12 @@
+<div class="end">
+  <a ui-sref="project({projectId:{{'task.project'}}})" 
+    class="user" ng-show="showProject">
+    <i class="fa fa-rocket" style="color:{{colors[task.project%12]}}"></i> {{task.project_name}}</a>
+  <div ng-show="task.tag" class="tags">
+    <span ng-repeat="tag in tags" class="label label-info">{{tag}}</span>
+  </div>
+  <!-- <div class="times"> -->
+  <!--   <div ng&#45;repeat="t in times" ng&#45;show="task[t]">&#38;nbsp;&#38;nbsp;{{t[0]}}:{{task[t]}}H</div> -->
+  <!-- </div> -->
+</div>
+

@@ -1,0 +1,27 @@
+ <div class="row">
+  <div class="col-xs-10 col-xs-push-1">
+    <timeline>
+      <timeline-event ng-repeat="activity in actvts.activities">
+        <timeline-badge class="info am-flip-x" style="padding:13px;" when-visible="animateElementIn" when-not-visible="animateElementOut">
+          <i class="fa fa-clock-o"></i>
+        </timeline-badge>
+        <timeline-panel class="info" >
+          <timeline-heading>
+            <div class="pull-right text-muted">{{activity.time_stamp|date:'dd-MMM-yyyy h:mm a'}}</div>
+            <h4><span class="fa fa-user"></span>&nbsp;{{activity.user||'N/A'}}</h4>
+          </timeline-heading>
+          <p><span class="fa fa-fw fa-tasks"></span>&nbsp;{{activity.task}}</p>
+          <p>status changed to <span class="label bg-{{activity.status}}">{{activity.status}}</span></p>
+        </timeline-panel>
+      </timeline-event>
+
+      <timeline-event ng-show="actvts.hideLoader" in-view="actvts.loadMore()">
+        <timeline-badge  class="info am-flip-x" style="padding:13px;margin-top:-21px;" >
+          <i class="fa fa-spinner fa-spin"></i>
+        </timeline-badge>
+      </timeline-event>
+
+    </timeline>
+  </div>
+ </div>
+ 

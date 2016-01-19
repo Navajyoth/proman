@@ -1,0 +1,89 @@
+{% load compress %}
+{% load staticfiles %}
+{% compress js %}
+<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/jquery-ui/jquery-ui.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/material.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/ripples.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/moment/moment.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-ui-router/release/angular-ui-router.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-resource/angular-resource.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-animate/angular-animate.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-toastr/dist/angular-toastr.tpls.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-ui-router-anim-in-out/anim-in-out.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-dragdrop/src/angular-dragdrop.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-busy/angular-busy.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-loading-bar/build/loading-bar.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-strap/dist/angular-strap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-strap/dist/angular-strap.tpl.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/jquery-bridget/jquery.bridget.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/get-style-property/get-style-property.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/eventEmitter/EventEmitter.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/outlayer/item.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/outlayer/outlayer.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/masonry/dist/masonry.pkgd.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/imagesloaded/imagesloaded.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-masonry/angular-masonry.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-timeline/dist/angular-timeline.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-inview/angular-inview.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/textAngular/dist/textAngular-rangy.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/textAngular/dist/textAngular-sanitize.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/textAngular/dist/textAngular.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-xeditable/dist/js/xeditable.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'apps/lib/angular-relative-date.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/lib/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/routes.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/constants.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/lib/common.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/lib/common.dir.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/lib/directives/expander/expIcon.dir.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'apps/layout/layout.ctrl.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'apps/projects/project.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/projects/project.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/projects/all.projects.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/projects/nav.projects.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/projects/main.project.ctrl.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'apps/users/user.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/users/nav.users.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'apps/tasks/task.dir.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/tasks/task.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/tasks/user.tasks.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/tasks/upsert.task.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/lib/confirmDelete/confirm.delete.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'apps/commits/commit.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/feeds/feeds.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/feeds/feeds.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/quotes/quotes.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/quotes/quotes.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/activities/activities.ctrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/activities/activities.srv.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'apps/workitems/workitem.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/workitems/add.workitem.dir.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/workitems/effort.workitem.dir.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/workitems/workitem.dir.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/tags/project.tags.dir.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/milestones/milestone.srv.js' %}"></script>
+<script type="text/javascript" src="{% static 'apps/milestones/project.milestones.dir.js' %}"></script>
+<script>
+$(function(){
+  // $.material.init()
+});
+</script>
+{% endcompress %}

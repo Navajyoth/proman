@@ -1,0 +1,18 @@
+<div class="row project">
+    <div class="tasks col-md-2 w-20p list-group" ng-repeat="s in pctrl.statusOptions">
+        <div class="status" ng-click="pctrl.addTaskModal()">
+            {{s}}
+        </div>
+        <div class="full-len-scroll">
+            <task 
+            show-user="true" 
+            is-manager="lc.user.is_manager"
+            show-notify="lc.user.is_manager"
+            ng-repeat="t in pctrl.tasks | statusFilter:s" task="t"></task>
+        </div>
+        <div class="fix-b-r">
+            <a ui-sref="project-main({projectId:{{'projectId'}}})" class="btn btn-info btn-fab">Main</a>
+            <a ng-click="pctrl.addTaskModal()" class="btn btn-info btn-fab btn-raised btn-fab-mini fa fa-plus"></a>
+        </div>
+    </div>
+</div>

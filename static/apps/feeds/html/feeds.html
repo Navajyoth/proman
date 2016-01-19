@@ -1,0 +1,32 @@
+<div ng-keyup="keyPressed($event)" tabindex="1">
+<div masonry load-images="true" reload-on-show class="row full-len-scroll p no-decor-tags">
+	<a ng-href="{{article.url}}" target="_blank" class="masonry-brick bg-white well m-xs" style="max-width:400px !important;" ng-repeat="article in feeds.feeds|feedsFilter:feeds.filter">
+		<div>
+			<h4 class="text-info text-wrap" ng-if="!article.title.length&&!article.image_url.length">{{article.url}}</h4>
+			<h4 class="text-info m-b-xs">{{article.title}}</h4>
+			<img class="img-responsive m-t-md" ng-if="article.image_url" ng-src="{{article.image_url}}">
+			<div class="m-t-xs text-muted text-justify">{{article.short_description}}</div>
+			<hr>
+			<div class="col-xs-12">
+				<div class="col-xs-6 pull-left text-muted text-left no-padding">{{article.user}}</div>
+				<div class="col-xs-6 pull-right text-muted text-right no-padding">{{article.date|date : 'dd-MMM-yyyy'}}</div>
+			</div>
+		</div>
+	</a>
+</div>
+
+<div class="fix-b-r">
+	<a  class="btn btn-info btn-fab btn-raised btn-fab-mini fa fa-filter"
+		bs-popover
+	    data-template-url="/static/apps/feeds/html/popover.feeds.filter.html"
+	    title="Filters"
+	    data-placement="left"
+	    data-auto-close="1"
+	    data-animation="am-fade-and-scale">
+	</a>
+	<br>
+	<br>
+	<a ng-click="feeds.openModalForArticle()" class="btn btn-info btn-fab btn-raised btn-fab-mini fa fa-plus"></a>
+</div>
+
+</div>

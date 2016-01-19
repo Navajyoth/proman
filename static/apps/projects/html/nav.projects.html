@@ -1,0 +1,6 @@
+<div class="head nav">
+    <div class="row items">
+        <div class="col-md-2 trim item" ng-repeat="p in navprj.projects" ui-sref-active="active" ui-sref="project({projectId:{{'p.id'}}})">{{p.name}}
+        </div>
+    </div>
+</div>

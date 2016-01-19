@@ -1,0 +1,25 @@
+{% load compress%}
+{% load staticfiles %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/font-awesome/css/font-awesome.css' %}"/>
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap&#45;material&#45;design/dist/css/material.css' %}"/> -->
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap&#45;material&#45;design/dist/css/ripples.css' %}"/>  -->
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap-material-design/sass/material-wfont.scss' %}"/>  -->
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-toastr/dist/angular-toastr.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular/angular-csp.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-busy/angular-busy.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'apps/lib/confirmDelete/confirm.delete.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-motion/dist/angular-motion.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-timeline/dist/angular-timeline.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-timeline/dist/angular-timeline-animations.css' %}"/>
+
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-loading-bar/build/loading-bar.css' %}"/>
+<script type="text/javascript" src="{% static 'bower_components/angular-loading-bar/build/loading-bar.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/textAngular/dist/textAngular.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-xeditable/dist/css/xeditable.css' %}"/>
+<link rel="stylesheet" type="text/x-scss" href="{% static 'sass/awesome-bootstrap-checkbox.css' %}"/>
+<link rel="stylesheet" type="text/x-scss" href="{% static 'sass/style.scss' %}"/>
+{% endcompress %}

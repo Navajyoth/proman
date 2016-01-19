@@ -1,0 +1,22 @@
+<div class="task list-group-item assigned {{task.priority}}">
+    <div>
+        <div class="tools">
+            <a ng-show="showNotify" ng-click="notify()" title="Send Notification"><i class="notify fa fa-bell-o"></i></a>
+        </div>
+        <h5 class="title" ng-click="edit()">
+            <!-- <i ng&#45;show="task.priority!=='normal'" class="fa fa&#45;circle&#45;o&#45;notch {{task.priority}}"></i> -->
+            {{task.title}} 
+            <div ng-if="task.items && task.items.length" class="checklist">
+                <i class="fa fa-check-square-o"></i> {{task.items_completed.length}}/{{task.items.length}} 
+            </div> 
+
+        </h5>
+        <div 
+            ng-include="'/static/apps/tasks/html/status.task.html'" 
+            ng-hide="showStatus"></div>
+
+        <div ng-include="'/static/apps/tasks/html/footer.task.html'" ng-show="showFooter"></div>
+
+    </div>
+</div>
+

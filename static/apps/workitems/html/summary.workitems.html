@@ -1,0 +1,19 @@
+<div ng-repeat="l1 in filterdItems" ng-init="{data:{showDetails:false}}">
+    <div> 
+        <div class="title hover">
+            <span class="link">
+                <span ng-repeat="i in range(depth)">|&nbsp;&nbsp;&nbsp;</span>|--
+                <span ng-hide="l1.child_count">-</span>
+            </span>
+            <div class="text pointer hover" ng-click="data.showDetails = !data.showDetails">
+                <exp-icon status="data" ng-show="l1.child_count"></exp-icon>
+                <span class="badge {{w.status}}">{{l1.total_effort}}</span>
+                {{l1.text}}
+            </div>
+        </div> 
+    </div>
+    <div style="margin-left:0px;" ng-show="data.showDetails">
+        <div id="wi_{{l1.id}}" ng-init="addInner(l1)"></div>
+    </div>
+</div>
+

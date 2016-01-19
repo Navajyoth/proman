@@ -1,0 +1,18 @@
+<html ng-app="app">
+<head>
+  <base href="/"/>
+  <title page-title></title>
+  {% include 'layout/stylesheets.html' %}
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="LayoutCtrl as lc" ng-cloak>
+  <toaster-container></toaster-container>
+  <div ng-include="'/static/apps/layout/html/header.layout.html'"></div>
+  <div class="container">
+    <div ui-view="main" id="main" class="anim-in-out anim-fade" data-anim-speed="200"></div>
+  </div>
+  {% include 'layout/javascripts.html'%}
+</body>
+</html>
+

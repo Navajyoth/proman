@@ -1,0 +1,23 @@
+<table class="table projects">
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th class="status" ng-repeat="s in allprj.statusList"> {{s}} </th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="p in allprj.projects">
+        <td class="head"><i class="fa fa-circle-o {{p.status}}"></i></td>
+        <td> 
+            <a ui-sref="project({projectId:{{'p.id'}}})">{{p.name}}</a> 
+            (<a ui-sref="project-main({projectId:{{'p.id'}}})">overview</a>)
+        </td>
+        <td class="status" ng-repeat="s in allprj.statusList"> {{p[s]}} </td>
+    </tr>
+</table>
+
+<style>
+    body, table{
+        background-color:#fff;
+    }
+</style>

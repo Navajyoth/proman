@@ -1,0 +1,26 @@
+<div class="popover" style="width:250px;" tabindex="-1">
+  <div class="arrow"></div>
+  <div class="popover-content task">
+    <div class="pull-right" ng-click="$hide()"><span class="badge">X</span></div>
+        <div class="popoverForm ">
+          <div class="form-group p-v">
+            <div class="p-h list-head">Tags</div>
+            <div class="checkbox p-h" ng-repeat="tag in usrstsk.tags">
+              <label>
+                  <input type="checkbox" ng-model="tag.checked">
+                  <span class="checkbox-material"><span class="check"></span></span>
+                  {{tag.id}}
+              </label>
+            </div>
+            <div class="p-h list-head">Projects</div>
+            <div class="checkbox p-h" ng-repeat="project in usrstsk.projects">
+              <label>
+                  <input type="checkbox" ng-model="project.checked">
+                  <span class="checkbox-material"><span class="check"></span></span>
+                  {{project.name}}
+              </label>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header ">
+				<h3 class="modal-title"><span class="fa fa-file-o"></span>&nbsp;New Article</h3>
+			</div>
+			<div class="modal-body">
+				<form ng-submit="addArticle(newArticle,$hide)" name="newArticle">
+					<div class="form-group">
+						<input auto-focus class="form-control empty" type="text" ng-model="newArticle.url" placeholder="Article URL" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success" ng-disabled="newArticle.$invalid" ng-click="addArticle(newArticle,$hide)" >Add</button>
+				<button class="btn btn-danger" type="button" ng-click="$hide()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

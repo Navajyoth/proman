@@ -1,0 +1,29 @@
+<nav class="navbar navbar-fixed-top">
+<div class="container row">
+  <div class="navbar-header col-md-1">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" ui-sref="home">
+      <img src="/static/img/logo.png" alt="">
+    </a>
+  </div>
+
+  <div class="nav-sub col-md-9">
+    <div ui-view="nav" class="anim-in-out anim-fade" data-anim-speed="200"></div>
+  </div>
+  <div class="head-right col-md-2">
+    <a id="navuser" class="link"
+      data-template-url="/static/apps/layout/html/pop.layout.html" 
+      data-placement="bottom-right"  
+      data-animation="am-flip-x"
+      bs-dropdown><i class="fa fa-user"></i> &nbsp;{{lc.user.name}} 
+      &nbsp;<span class="fa fa-chevron-down" >
+      </span>
+    </a>
+  </div>
+</div>
+</nav>

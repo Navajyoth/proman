@@ -1,0 +1,20 @@
+<div class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header ">
+				<h3 class="modal-title"><span class="fa fa-file-o"></span>&nbsp;Commit URL</h3>
+			</div>
+			<div class="modal-body">
+				<form ng-submit="addCommit(commit,$hide)" name="commitFrom">
+					<div class="form-group">
+						<input auto-focus class="form-control empty" type="text" ng-model="commit.url" placeholder="Commit URL" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success" ng-disabled="commitFrom.$invalid" ng-click="addCommit(commit,$hide)" >Add</button>
+				<button class="btn btn-danger" type="button" ng-click="$hide()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

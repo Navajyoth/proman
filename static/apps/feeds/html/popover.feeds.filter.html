@@ -1,0 +1,18 @@
+<div class="popover" style="width:250px;" tabindex="-1">
+  <div class="arrow"></div>
+  <div class="popover-content task">
+    <div class="pull-right" ng-click="$hide()"><span class="badge">X</span></div>
+        <div class="popoverForm ">
+          <div class="form-group p-v">
+            <div class="p-h list-head">Tags</div>
+            <div class="checkbox p-h" ng-repeat="tag in feeds.tags">
+              <label>
+                  <input type="checkbox" ng-model="tag.checked">
+                  <span class="checkbox-material"><span class="check"></span></span>
+                  {{tag.name}}
+              </label>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

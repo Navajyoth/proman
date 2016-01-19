@@ -1,0 +1,18 @@
+<div ng-repeat="l1 in filterdItems">
+    <div> 
+        <div class="title">
+            <span class="link">
+                <span ng-repeat="i in range(depth)">|&nbsp;&nbsp;</span>|--&gt;
+            </span>
+            <workitem-effort  ng-hide="root.hideEstimate" workitem="l1"></workitem-effort>
+            <div class="text" rdt-draggable drag="selectWorkitem(l1)">
+                <a ng-click="toggleStatus(l1)" class="status {{l1.status}}"><i class="fa fa-circle"></i></a>
+                <a editable-text="l1.text" onbeforesave="save(l1)">{{l1.text}}</a>
+            </div>
+        </div> 
+        <add-work parent="l1"></add-work> 
+    </div>
+    <div style="margin-left:0px;">
+        <div id="wi_{{l1.id}}" ng-init="addInner(l1)"></div>
+    </div>
+</div>

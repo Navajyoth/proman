@@ -1,0 +1,88 @@
+<div class="modal edit-task-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="row" ng-submit="upsert($hide)" editable-form>
+                    <div class="col-md-9 left">
+                        <div class="form-group">
+                            <textarea auto-focus class="form-control empty" ng-model="task.title" 
+                                placeholder="Task Title" ng-show="isEdit.title" focus-on="isEdit.title" 
+                                ng-enter="isEdit.title=false" ng-blur="isEdit.title=false" required></textarea>
+                            <h4 ng-hide="isEdit.title" ng-click="isEdit.title=true">{{task.title || 'Click to add title'}}</h4>
+                        </div>
+                        <div class="form-group">
+                            <div ng-click="isEdit.description=true" ng-hide="isEdit.description">
+                                <div ng-bind-html="task.description" class="description"></div>
+                                <a ng-hide="task.description"> Add Description</a>
+                            </div>
+                            <text-angular  ng-show="isEdit.description" ng-model="task.description" 
+                                focus-on="isEdit.description" ng-blur="isEdit.description=false"></text-angular>
+                        </div>
+
+                        <div class="sub-tasks form-group">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" 
+                                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" 
+                                    style="min-width:4%; width:{{task.itemsCompleted.length*100/task.items.length}}%">
+                                    <span class="">{{task.itemsCompleted.length}}/{{task.items.length}}</span>
+                                </div>
+                            </div>
+                            <label for=""></label>
+                            <div ng-repeat="t in task.items track by $index" ng-class="{completed:t.completed}">
+                                <div class="checkbox checkbox-success" ng-hide="t.edit">
+                                    <input id="item_{{$index}}" type="checkbox" ng-model="t.completed" class="styled">
+                                    <label ng-click="onItemBlur()" for="item_{{$index}}">{{t.name}}</label>
+                                    <a ng-click="editItem(t)">edit</a>
+                                </div>
+                                <textarea ng-show="t.edit" type="text" ng-model="t.name" focus-on="t.edit" 
+                                    ng-blur="onItemBlur(t)" ng-enter="addItem(t)"></textarea>
+                            </div>
+                            <a class="add-btn" ng-click="addItem()">Add sub task</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 right">
+                        <div class="form-group">
+                            <label for="">User</label>
+                            <select class="form-control empty" ng-model="taskUser.user" 
+                                ng-options="u.name for u in users"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Priority</label>
+                            <select class="form-control empty" 
+                                ng-model="task.priority" ng-options="prior for prior in priorityOpts"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Reviewer</label>
+                            <select class="form-control empty" placeholder="Reviewer" 
+                                ng-model="taskUser.reviewer" ng-options="u.name for u in users"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Due Date</label>
+                            <div class="dropdown calder">
+                                <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
+                                    <div class="input-group"><input type="text" class="form-control" data-ng-model="task.due_date"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <datetimepicker data-ng-model="task.due_date" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <div class="pull-left" ng-dropdown-multiselect="" 
+                        options="tags.all" selected-model="tags.selected" 
+                        extra-settings="{smartButtonMaxItems:5, showUncheckAll:false, showCheckAll:false}"></div>
+                    <button class="btn btn-danger btn-remove-task" type="button" ng-click="delete($hide)">delete</button>
+                </div>
+                <button class="btn" type="button" ng-click="cancel($hide)">Cancel</button>
+                <button class="btn btn-success" ng-disabled="newTask.$invalid" ng-click="upsert($hide)" >Save</button>
+            </div>
+        </div>
+    </div>
+</div>

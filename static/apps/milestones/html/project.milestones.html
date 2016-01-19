@@ -1,0 +1,27 @@
+<div class="milestones">
+    <form class="add-item" ng-enter="add()">
+        <input type="" class="form-control" ng-model="newMilestoneName"
+        placeholder="new milestone name"  required>
+    </form>
+    <div ng-repeat="m in milestones" rdt-droppable drop="addWorkitem(m)">
+        <h5>
+            <span class="badge">{{m.effort}}</span>
+            {{m.name}}
+        </h5>
+        <div class="workitems">
+            <workitems-summary milestone="{{m.id}}" items="workitems" depth="0"></workitems-summary>
+        </div>
+        <!-- <div class="workitems" ng&#45;init="{data:{showDetails:false}}" -->
+        <!--     ng&#45;repeat="w in workitems | filter:{'milestone': m.id}:true"> -->
+        <!--     <span class="badge {{w.status}}">{{w.total_effort}}</span> -->
+        <!--     <span ng&#45;click="data.showDetails=!data.showDetails" class="pointer hover"> -->
+        <!--         <exp&#45;icon status="data"></exp&#45;icon> -->
+        <!--         {{w.text}} -->
+        <!--         <a ng&#45;click="removeWorkitem(w)"><i class="fa fa&#45;times&#45;circle"></i></a> -->
+        <!--     </span> -->
+        <!--     <workitems&#45;summary ng&#45;show="data.showDetails" items="workitems" parent="{{w.id}}" depth="0"></workitems&#45;summary> -->
+        <!-- </div> -->
+        <hr>
+        
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div>
+  {% if article.title %}
+  <h2><a href="{{article.url}}">{{article.title}}</a></h2>
+  {% endif %}
+
+  {%if article.short_description %}
+  <p>{{article.short_description}}</p>
+  {% endif %}
+
+  {% if aricle.tags %}
+  <em>{{article.tags}}</em>
+  {% endif %}
+
+  <hr>
+  
+  <a href="http://proman-django.herokuapp.com/#/article-feed/">Check this link if you want to share or view all articles</a>
+</div>
